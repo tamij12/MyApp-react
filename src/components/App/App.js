@@ -1,24 +1,28 @@
 import React from "react";
 
 import "./App.css";
-import routes from "../../routes";
 import Home from "../../pages/home";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Route,
   Routes,
 } from "react-router-dom";
+import Post from "../../pages/post";
 
 export default function App() {
   return (<>
-  <Home/>
-    <Router>
-      <Routes>
-        {routes.map((props, index) => (
-          <Route key={index} {...props} />
-        ))}
-      </Routes>
-    </Router>
+  {/* <Home/> */}
+    <BrowserRouter>
+    <Routes>
+      <Route path="/">
+        <Route index element={<Home/>}></Route>
+      </Route>
+
+      <Route path="/post">
+        <Route index element={<Post/>}></Route>
+      </Route>
+    </Routes>
+    </BrowserRouter>
   </>
      
   );
