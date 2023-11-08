@@ -9,15 +9,15 @@ import {
 } from "react-router-dom";
 import Post from "../../pages/post";
 import CreateNewPost from "../../pages/createNewPost";
+import MainLayout from "../../layouts/MainLayout";
 
 
 export default function App() {
   return (<>
-  {/* <Home/> */}
     <BrowserRouter>
     <Routes>
 
-      <Route path="/">
+      <Route path="/" element={<MainLayout/>}>
         <Route index element={<Home/>}></Route>
       </Route>
 

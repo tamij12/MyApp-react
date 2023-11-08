@@ -4,6 +4,7 @@ import { Nav } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./navbar.scss";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -16,9 +17,9 @@ export default function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link to="/"> Home</Nav.Link>
-            <Nav.Link to="/posts">Posts</Nav.Link>
-            <Nav.Link to="/newpost">Create New Post</Nav.Link>
+          <Link to="/">Home</Link>
+          <Link to="/post">Post</Link>
+          <Link to="/newpost">Write</Link>
             {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

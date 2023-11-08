@@ -1,0 +1,122 @@
+.view-post {
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  .post {
+    h1 {
+      font-weight: 800;
+      letter-spacing: -0.014em;
+      line-height: 38px;
+      margin-top: 1.01em;
+      font-size: 32px;
+      margin-bottom: -0.35em;
+      color: #242424;
+      text-align: start;
+      padding: 20px;
+    }
+    h2 {
+      font-size: 18px;
+      color: #6b6b6b;
+      font-weight: 400;
+      text-align: start;
+      padding: 20px;
+    }
+    .info-profile {
+      display: flex;
+      .img-profile {
+        margin-right: 20px;
+        margin-left: 20px;
+        img {
+          height: 44px;
+        }
+      }
+      .author-name-date {
+        .author-name {
+          display: flex;
+          button {
+            border: none;
+            background: none;
+            color: #1a8917;
+          }
+        }
+        .date {
+          span {
+            color: #6b6b6b;
+          }
+        }
+      }
+    }
+    .actions {
+        margin-top: 25px;
+      display: flex;
+      justify-content: center;
+    }
+    .description-post{
+        font-size: 18px;
+        padding: 30px;
+        span{
+            color: #242424;
+            font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+        }
+    }
+  }
+  .topics {
+    display: flex;
+  }
+  .reactions {
+    display: flex;
+    padding: 25px;
+    justify-content: space-between;
+    font-size: 20px;
+    .applaud-comments {
+      display: flex;
+      div{
+        margin-right: 15px;
+      }
+    }
+    .save-share-more {
+      display: flex;
+    }
+  }
+
+  .b-actions {
+    color: #6b6b6b;
+    background: none;
+    margin-right: 10px;
+  }
+  .img-post{
+    div{
+        .image-post{
+            max-width: 100%;
+            padding: 30px;
+            border-radius: 40px;
+        }
+    }
+  }
+}
+.b-topics{
+    color: #242424;
+    background-color: #f2f2f2;
+    margin-left: 15px;
+    margin-bottom: 35px
+}
+
+.b{
+    border: none;
+    background: none;
+}
+
+
+.b-nav{
+    border: none;
+    background: none;
+    font-size: 25px;
+}
+.img-profile-nav{
+    height: 32px;
+}
+.buttons-nav{
+    align-items: end;
+    .img-profile{
+        margin-left: 10px;
+    }
+}
+

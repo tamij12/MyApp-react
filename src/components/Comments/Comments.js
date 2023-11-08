@@ -1,97 +1,52 @@
 import React from "react";
 
-import Dropdown from 'react-bootstrap/Dropdown';
-import Card from "react-bootstrap/Card";
+import "./comments.scss";
+
+import Dropdown from "react-bootstrap/Dropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import NewComment from "../NewComment/NewComment";
+import CommentBrowser from "../CommentBrowser/CommentBrowser";
+
+import {MdOutlineExpandMore} from "react-icons/md"
 
 export default function Comments() {
+  const commentsArray = [
+    {
+      id: 0,
+      name: "tamijangosrz",
+      description: "i love it",
+    },
+    {
+      id: 1,
+      name: "tamijangosrz",
+      description: "its good",
+    },
+    {
+      id: 2,
+      name: "tamijangosrz",
+      description: "hello",
+    },
+  ];
   return (
     <React.Fragment>
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>Responses (140)</Offcanvas.Title>
         <div>
-          <span>MOST RELEVANT</span>
-        </div>
+            <span>MOST RELEVANT <MdOutlineExpandMore/> </span>
+          </div>
       </Offcanvas.Header>
-
-
+      <hr />
       <Offcanvas.Body>
-      <Dropdown>
-      <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-      What are you thoughts?
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <NewComment/>
-      </Dropdown.Menu>
-    </Dropdown>
-        <Card border="light" style={{ width: "18rem" }}>
-          <Card.Header>Header</Card.Header>
-          <Card.Body>
-            <Card.Title>Primary Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-        <br />
-        <Card border="light" style={{ width: "18rem" }}>
-          <Card.Header>Header</Card.Header>
-          <Card.Body>
-            <Card.Title>Primary Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-        <br />
-        <Card border="light" style={{ width: "18rem" }}>
-          <Card.Header>Header</Card.Header>
-          <Card.Body>
-            <Card.Title>Primary Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-        <br />
-        <Card border="light" style={{ width: "18rem" }}>
-          <Card.Header>Header</Card.Header>
-          <Card.Body>
-            <Card.Title>Primary Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-        <br />
-        <Card border="light" style={{ width: "18rem" }}>
-          <Card.Header>Header</Card.Header>
-          <Card.Body>
-            <Card.Title>Primary Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-        <br />
-        <Card border="light" style={{ width: "18rem" }}>
-          <Card.Header>Header</Card.Header>
-          <Card.Body>
-            <Card.Title>Primary Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-        <br />
+        <Dropdown className="dropdown-off">
+          <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+            What are you thoughts?
+          </Dropdown.Toggle>
+          <hr />
+          <Dropdown.Menu className="dropdown-menu-comment">
+            <NewComment />
+          </Dropdown.Menu>
+        </Dropdown>
+        <CommentBrowser comments = {commentsArray}/>
       </Offcanvas.Body>
     </React.Fragment>
   );
