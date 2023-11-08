@@ -1,7 +1,9 @@
 import React from "react";
 
+import Dropdown from 'react-bootstrap/Dropdown';
 import Card from "react-bootstrap/Card";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import NewComment from "../NewComment/NewComment";
 
 export default function Comments() {
   return (
@@ -12,7 +14,18 @@ export default function Comments() {
           <span>MOST RELEVANT</span>
         </div>
       </Offcanvas.Header>
+
+
       <Offcanvas.Body>
+      <Dropdown>
+      <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+      What are you thoughts?
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <NewComment/>
+      </Dropdown.Menu>
+    </Dropdown>
         <Card border="light" style={{ width: "18rem" }}>
           <Card.Header>Header</Card.Header>
           <Card.Body>
