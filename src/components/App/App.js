@@ -7,6 +7,8 @@ import Post from "../../pages/post";
 import CreateNewPost from "../../pages/createNewPost";
 import MainLayout from "../../layouts/MainLayout";
 import Blogs from "../../context/blogs";
+import NavBarWriteLayout from "../../layouts/NavBarWrite/NavBarWriteLayout";
+import NavBarBlogLayout from "../../layouts/NavBarBlog/NavBarBlogLayout";
 
 export default function App() {
   return (
@@ -18,11 +20,11 @@ export default function App() {
               <Route index element={<Home />}></Route>
             </Route>
 
-            <Route path="/post">
+            <Route path="/post" element={<NavBarBlogLayout />}>
               <Route index element={<Post />}></Route>
             </Route>
 
-            <Route path="/newpost">
+            <Route path="/newpost" element={<NavBarWriteLayout />}>
               <Route index element={<CreateNewPost />}></Route>
             </Route>
           </Routes>

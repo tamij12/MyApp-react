@@ -38,7 +38,7 @@ export default function Comments() {
       <hr />
       <Offcanvas.Body>
         <Dropdown className="dropdown-off">
-          <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+          <Dropdown.Toggle variant="secondary" id="dropdown-basic" className="dropdown-b">
             What are you thoughts?
           </Dropdown.Toggle>
           <hr />
