@@ -1,38 +1,35 @@
 import React from "react";
+
 import Container from "react-bootstrap/Container";
 import { Nav } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import "./navbar.scss";
 import { Link } from "react-router-dom";
+
+import "./navbar.scss";
 
 export default function NavBar() {
   return (
-    <Navbar
-      expand="lg"
-      className="shadow p-3 mb-2 bg-body-tertiary rounded"
-    >
-      <Container>
-        <Navbar.Brand href="#home" className="fw-bold">React-App</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-          <Link to="/">Home</Link>
-          <Link to="/post">Post</Link>
-          <Link to="/newpost">Write</Link>
-            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown> */}
-          </Nav>
-        </Navbar.Collapse>
+    <Navbar expand="lg" className="shadow p-3 mb-2 bg-body-tertiary rounded">
+      <Container className="d-flex">
+        <Navbar.Brand href="#home" className="fw-bold">
+          React-App
+        </Navbar.Brand>
+        <div className="nav-links d-flex">
+          <div className="div-link">
+            <Link className="link" to="/">Our Story</Link>
+          </div>
+          <div className="div-link">
+            <Link className="link" to="/post">Post</Link>
+          </div>
+          <div className="div-link">
+            <Link className="link" to="/newpost">Write</Link>
+          </div>
+          <div>
+              <button className="btn btn-success  rounded-pill ">
+                Get Started
+              </button>
+            </div>
+        </div>
       </Container>
     </Navbar>
   );

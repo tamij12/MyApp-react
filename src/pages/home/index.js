@@ -5,7 +5,7 @@ import SectionMain from "../../components/SectionMain/SectionMain";
 export default function Home() {
   return (
     <React.Fragment>
-      <SectionMain/>
+      {/* <SectionMain/> */}
       <Posts />
     </React.Fragment>
   );
