@@ -1,7 +1,11 @@
-import React from "react";
+import React ,{useContext} from "react";
 import Post from "../Post/Post";
 
+import { postsContext } from "../../context/blogs";
+
+
 export default function PostBrowser (props) {
+    // const { posts, setPosts } = useContext(postsContext);
     const { posts } = props;
     return(
         <React.Fragment>

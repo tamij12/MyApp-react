@@ -53,7 +53,7 @@ export default function ViewPost() {
 
       <div className="container row">
         <div className=" col-lg-3 "></div>
-        <div className="view-post  row col-lg-9">
+        <div className="view-post  row col-lg-9 shadow">
           <div className="post">
             <div>
               <h1 className="title">
@@ -81,7 +81,7 @@ export default function ViewPost() {
                     <p>AL Anany</p>
                   </div>
                   <div>
-                    <p>.</p>
+                    <p className="p-author-name">.</p>
                   </div>
                   <div>
                     <button> Follow</button>
@@ -89,7 +89,7 @@ export default function ViewPost() {
                 </div>
                 <div className="date">
                   <span>6 min read</span>
-                  <span>.</span>
+                  <span className="p-author-name">.</span>
                   <span>Sep 1</span>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function ViewPost() {
               <div>
                 <img
                   className="image-post"
-                  src="https://th.bing.com/th/id/R.73f6012da281568c197dda051d92164a?rik=TCgCJVC%2blXcwtg&pid=ImgRaw&r=0"
+                  src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*dSNe43PNXKIfvblbfMQdFQ.png"
                 />
               </div>
             </div>

@@ -16,19 +16,25 @@ export default function NavBar() {
         </Navbar.Brand>
         <div className="nav-links d-flex">
           <div className="div-link">
-            <Link className="link" to="/">Our Story</Link>
+            <Link className="link" to="/">
+              Our Story
+            </Link>
           </div>
           <div className="div-link">
-            <Link className="link" to="/post">Post</Link>
+            <Link className="link" to="/post">
+              Blog
+            </Link>
           </div>
           <div className="div-link">
-            <Link className="link" to="/newpost">Write</Link>
+            <Link className="link" to="/newpost">
+              Write
+            </Link>
           </div>
           <div>
-              <button className="btn btn-success  rounded-pill ">
-                Get Started
-              </button>
-            </div>
+            <button className="btn btn-success  rounded-pill ">
+              Get Started
+            </button>
+          </div>
         </div>
       </Container>
     </Navbar>

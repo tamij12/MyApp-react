@@ -1,7 +1,54 @@
-.posts {
-  display: flex;
-  justify-content: center;
-  .card-post {
-    margin-top: 25px;
+
+
+.container-post {
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 35px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.div-img-author-post {
+  img {
+    height: 30px;
+    margin-right: 12px;
   }
+}
+.span-author {
+  color: #242424;
+  font-size: 13px;
+}
+.div-span-author {
+  margin-block: auto;
+}
+.h2-title {
+  font-size: 20px;
+  margin-top: 15px;
+  color: #242424;
+  font-weight: 800;
+}
+.span-description {
+  color: #6b6b6b;
+  font-size: 15px;
+}
+.span {
+  color: #6b6b6b;
+  font-size: 12px;
+  margin-right: 5px;
+}
+.b{
+  border: none;
+  background: none;
+}
+.more-info-post{
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.img-post{
+  max-width: 100%;
+  padding: 30px;
+  border-radius: 50px;
+  height: auto;
+}
+.date-read{
+  margin-top: 3px;
 }

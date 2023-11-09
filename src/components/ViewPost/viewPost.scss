@@ -1,5 +1,7 @@
 .view-post {
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 25px;
+  margin-bottom: 25px;
   .post {
     h1 {
       font-weight: 800;
@@ -26,6 +28,7 @@
         margin-left: 20px;
         img {
           height: 44px;
+          margin-top: 8px;
         }
       }
       .author-name-date {
@@ -120,3 +123,7 @@
     }
 }
 
+.p-author-name{
+  margin-left: 4px;
+  margin-right: 4px;
+}
