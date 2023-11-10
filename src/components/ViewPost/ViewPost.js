@@ -24,7 +24,7 @@ export default function ViewPost() {
     <React.Fragment>
       <div className="container row">
         <div className=" col-lg-3 "></div>
-        <div className="view-post  row col-lg-9 shadow">
+        <div className="view-post col-lg-9 shadow">
           <div className="post">
             <div>
               <h1 className="title">
