@@ -4,7 +4,7 @@ import "./post.scss";
 import { AiFillDelete } from "react-icons/ai";
 import { IoIosBookmark } from "react-icons/io";
 export default function Post(props) {
-  const { img, titulo, autor, creacion, descripcion } = props;
+  const { _id, img, title, author, createdAt, content } = props;
   return (
     <React.Fragment>
       <div className="row">
@@ -22,22 +22,22 @@ export default function Post(props) {
             </div>
             <div className="div-author d-flex">
               <div className="div-span-author">
-                <span className="span-author fw-bold">{autor}</span>
+                <span className="span-author fw-bold">{author.name}</span>
               </div>
             </div>
           </div>
           <div className="content-post">
             <div className="div-post-title">
-              <h2 className="h2-title">{titulo}</h2>
+              <h2 className="h2-title">{title}</h2>
             </div>
             <div className="div-post-description">
-              <span className="span-description">{descripcion}</span>
+              <span className="span-description">{content}</span>
             </div>
           </div>
           <div className="more-info-post d-flex">
             <div className="date-read d-flex">
               <div>
-                <span className="span">{creacion}</span>
+                <span className="span">{createdAt}</span>
               </div>
               <div>
                 <span className="span">-</span>
