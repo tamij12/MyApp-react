@@ -28,7 +28,7 @@ export default function Posts() {
         post.createdAt = dateString;
       });
 
-      console.log(data);
+      console.log(data, "context");
 
       setPosts(data);
     };

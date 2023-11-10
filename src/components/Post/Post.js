@@ -1,11 +1,22 @@
-import React from "react";
+import React, {useContext,} from "react";
 
 import "./post.scss";
 import { AiFillDelete } from "react-icons/ai";
 import { IoIosBookmark } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
+
+import { postsContext } from "../../context/blogs";
+
 export default function Post(props) {
+  const { id } = useParams();
+  // const { posts, setPosts } = useContext(postsContext);
+
   const { _id, img, title, author, createdAt, content } = props;
+
+  const deletePost =(id)=>{}
+
   return (
     <React.Fragment>
       <Link to={`/post/${_id}`} className="post">
@@ -49,7 +60,7 @@ export default function Post(props) {
                 </div>
               </div>
               <div>
-                <button className="b">
+                <button className="b" onClick={() => deletePost(id)}>
                   <AiFillDelete />
                 </button>
                 <button className="b">

@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
@@ -33,9 +33,12 @@ export default function NavBarWriteLayout() {
               </button>
             </div>
             <div>
-              <button className="btn btn-success disabled rounded-pill b-publish">
+              <Link to={`/`}>
+              <button  className="btn btn-success rounded-pill b-publish">
                 Publish
               </button>
+              </Link>
+              
             </div>
           </div>
         </Container>

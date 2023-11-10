@@ -94,25 +94,57 @@ export default function NewPost() {
     }
   };
 
-  function addPost() {
+  const addPost = async () => {
     const title = document.getElementById("title-post").value;
     const description = document.getElementById("description-post").value;
     const author = document.getElementById("author-post").value;
     const img = document.getElementById("img-post").value;
 
-    const changedPosts = [
-      {
-        id: posts.length,
-        title: title,
-        description: description,
-        author: author,
-        img: img,
-      },
-      ...posts,
-    ];
+    const changedPosts = {
+      id: posts.length,
+      title: title,
+      description: description,
+      author: {name:author} ,
+      img: img,
+    };
+
     console.log(changedPosts);
-    setPosts(changedPosts);
-  }
+    // setPosts(changedPosts);
+    try {
+      const response = await fetch("http://localhost:5001/post", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(changedPosts),
+      });
+      if (response.ok) {
+        const jsonResponse = await response.json();
+        console.log(jsonResponse)
+        setPosts([...posts, { jsonResponse }]);
+      }
+    } catch (error) {
+      console.log(error, "este es el error");
+    }
+  };
+
+  // function addPost() {
+  //   const title = document.getElementById("title-post").value;
+  //   const description = document.getElementById("description-post").value;
+  //   const author = document.getElementById("author-post").value;
+  //   const img = document.getElementById("img-post").value;
+
+  //   const changedPosts = [
+  //     {
+  //       id: posts.length,
+  //       title: title,
+  //       description: description,
+  //       author: author,
+  //       img: img,
+  //     },
+  //     ...posts,
+  //   ];
+  //   console.log(changedPosts);
+  //   setPosts(changedPosts);
+  // }
 
   const validateForm = (e) => {
     e.preventDefault();

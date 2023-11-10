@@ -2,15 +2,13 @@ import React from "react";
 import Comment from "../Comment/Comment";
 
 export default function CommentBrowser(props) {
-    const { comments } = props;
+  const { comments } = props;
 
-return(
+  return (
     <React.Fragment>
-        {
-                comments.map((comments, index) => {
-                    return <Comment key={index} {...comments}/>
-                })
-            }
+      {comments.map((comments, index) => {
+        return <Comment key={index} {...comments} />;
+      })}
     </React.Fragment>
-)
+  );
 }

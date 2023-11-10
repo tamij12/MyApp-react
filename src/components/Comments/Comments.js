@@ -7,7 +7,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import NewComment from "../NewComment/NewComment";
 import CommentBrowser from "../CommentBrowser/CommentBrowser";
 
-import {MdOutlineExpandMore} from "react-icons/md"
+import { MdOutlineExpandMore } from "react-icons/md";
 
 export default function Comments() {
   const commentsArray = [
@@ -32,13 +32,19 @@ export default function Comments() {
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>Responses (140)</Offcanvas.Title>
         <div>
-            <span>MOST RELEVANT <MdOutlineExpandMore/> </span>
-          </div>
+          <span>
+            MOST RELEVANT <MdOutlineExpandMore />{" "}
+          </span>
+        </div>
       </Offcanvas.Header>
       <hr />
       <Offcanvas.Body>
         <Dropdown className="dropdown-off">
-          <Dropdown.Toggle variant="secondary" id="dropdown-basic" className="dropdown-b">
+          <Dropdown.Toggle
+            variant="secondary"
+            id="dropdown-basic"
+            className="dropdown-b"
+          >
             What are you thoughts?
           </Dropdown.Toggle>
           <hr />
@@ -46,7 +52,7 @@ export default function Comments() {
             <NewComment />
           </Dropdown.Menu>
         </Dropdown>
-        <CommentBrowser comments = {commentsArray}/>
+        <CommentBrowser comments={commentsArray} />
       </Offcanvas.Body>
     </React.Fragment>
   );

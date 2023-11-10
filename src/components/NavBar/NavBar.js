@@ -21,11 +21,6 @@ export default function NavBar() {
             </Link>
           </div>
           <div className="div-link">
-            <Link className="link" to="/post">
-              Blog
-            </Link>
-          </div>
-          <div className="div-link">
             <Link className="link" to="/newpost">
               Write
             </Link>
