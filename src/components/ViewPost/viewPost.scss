@@ -2,6 +2,7 @@
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 25px;
   margin-bottom: 25px;
+  padding: auto;
   .post {
     h1 {
       font-weight: 800;
@@ -89,6 +90,7 @@
     div{
         .image-post{
             max-width: 100%;
+            width: 900px;
             padding: 30px;
             border-radius: 40px;
         }

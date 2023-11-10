@@ -1,8 +1,11 @@
 import React from "react";
 
 import "./viewPost.scss";
+import { postsContext } from "../../context/blogs";
 
-import { useState } from "react";
+import { useParams } from "react-router-dom";
+
+import { useState, useContext, useEffect } from "react";
 
 import {
   IoMdPlay,
@@ -15,6 +18,26 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Comments from "../Comments/Comments";
 
 export default function ViewPost() {
+  const [post, setPost] = React.useState({});
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchPost = async () => {
+        const response = await fetch(`http://localhost:5001/post/${id}`);
+        const data = await response.json();
+
+        // Convert date to dateString in dd/mm/yyyy format
+        const date = new Date(data.createdAt);
+        const dateString = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+        data.createdAt = dateString;
+
+        setPost(data);
+    }
+
+    fetchPost();
+}, []);
+
+
   const [showComments, setShowComments] = useState(false);
 
   const handleCloseCommments = () => setShowComments(false);
@@ -28,14 +51,12 @@ export default function ViewPost() {
           <div className="post">
             <div>
               <h1 className="title">
-                The ChatGPT Hype Is Over — Now Watch How Google Will Kill
-                ChatGPT.
+                {post.title}
               </h1>
             </div>
             <div>
               <h2 className="sub-title">
-                It never happens instantly. The business game is longer than you
-                know.
+                {post.content}
               </h2>
             </div>
             <hr />
@@ -49,7 +70,7 @@ export default function ViewPost() {
               <div className="author-name-date">
                 <div className="author-name">
                   <div>
-                    <p>AL Anany</p>
+                    <p>{post.author?.name}</p>
                   </div>
                   <div>
                     <p className="p-author-name">.</p>
@@ -61,7 +82,7 @@ export default function ViewPost() {
                 <div className="date">
                   <span>6 min read</span>
                   <span className="p-author-name">.</span>
-                  <span>Sep 1</span>
+                  <span>{post.createdAt}</span>
                 </div>
               </div>
             </div>
@@ -90,23 +111,16 @@ export default function ViewPost() {
               <div>
                 <img
                   className="image-post"
-                  src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*dSNe43PNXKIfvblbfMQdFQ.png"
+                  src={post.img}
                 />
               </div>
             </div>
             <div className="description-post">
               <span>
-                In the vast ocean of mobile applications, some remarkable gems
-                often go unnoticed. While popular apps dominate the headlines,
-                there are numerous lesser-known apps that offer unique features,
-                creative solutions, and a refreshing experience. In this
-                article, we’ll unveil 20 remarkable mobile apps that have flown
-                under the radar but are worth exploring. From productivity tools
-                to innovative entertainment options, let’s discover these hidden
-                gems!
+                {post.content}
               </span>
               <div>
-                <p>AL Anany</p>
+                <p>{post.author?.name}</p>
               </div>
             </div>
           </div>
@@ -147,7 +161,7 @@ export default function ViewPost() {
                 >
                   <Comments />
                 </Offcanvas>
-                <span>140</span>
+                <span>{post.comments}</span>
               </div>
             </div>
             <div className="save-share-more">
