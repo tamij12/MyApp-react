@@ -170,7 +170,7 @@ export default function ViewPost() {
                     </button>
                   </div>
                   <div>
-                    <Link to={`/post/${id}/editpost`}>
+                    <Link to={`/editpost`}>
                       <button className="b save">
                         <BiEdit />
                       </button>

@@ -1,9 +1,36 @@
-import React from "react";
+import React, {useContext,useEffect} from "react";
 
 import {MdFileDownloadDone} from "react-icons/md";
 import { Form, FormGroup } from "react-bootstrap";
 
+import { useParams } from "react-router-dom";
+
+import { postsContext } from "../../context/blogs";
+
 export default function EditPost() {
+  const { posts, setPosts } = useContext(postsContext);
+
+  const { id } = useParams();
+
+
+  // useEffect(() => {
+  //   const fetchPost = async () => {
+  //     const response = await fetch(`http://localhost:5001/post/${id}`);
+  //     const data = await response.json();
+
+  //     // Convert date to dateString in dd/mm/yyyy format
+  //     const date = new Date(data.createdAt);
+  //     const dateString = `${date.getDate()}/${
+  //       date.getMonth() + 1
+  //     }/${date.getFullYear()}`;
+  //     data.createdAt = dateString;
+
+  //     setPosts(data);
+  //   };
+
+  //   fetchPost();
+  // }, []);
+
   return (
     <React.Fragment>
       <div className="container row">

@@ -31,7 +31,11 @@ export default function App() {
             <Route path="/newpost" element={<NavBarWriteLayout />}>
               <Route index element={<CreateNewPost />}></Route>
             </Route>
-            
+
+            <Route path="/editpost" element={<NavBarWriteLayout />}>
+              <Route index element={<Edit />}></Route>
+            </Route>
+
           </Routes>
         </BrowserRouter>
       </Blogs>
